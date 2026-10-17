@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { site } from "@/data/site";
+import { seo } from "@/data/seo";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { Navbar } from "@/components/layout/navbar";
@@ -22,42 +23,31 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(seo.url),
   title: {
-    default: `${site.name} — ${site.designation}`,
-    template: `%s — ${site.name}`,
+    default: seo.title,
+    template: `%s — ${seo.name}`,
   },
-  description: site.description,
-  applicationName: `${site.name} Portfolio`,
-  authors: [{ name: site.name, url: site.socials[0]?.href }],
-  creator: site.name,
-  keywords: [
-    "Najmul Islam",
-    "devnajmulislam",
-    "MERN stack developer",
-    "full-stack developer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "content writer",
-    "portfolio",
-  ],
+  description: seo.description,
+  applicationName: `${seo.name} Portfolio`,
+  authors: [{ name: seo.name, url: seo.sameAs[0] }],
+  creator: seo.name,
+  keywords: [...seo.keywords],
+  verification: { google: "googleba28431f5dd16e41.html" },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
-    siteName: `${site.name} Portfolio`,
-    title: `${site.name} — ${site.designation}`,
-    description: site.description,
+    url: seo.url,
+    siteName: `${seo.name} Portfolio`,
+    title: seo.title,
+    description: seo.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.designation}`,
-    description: site.description,
+    title: seo.title,
+    description: seo.description,
     creator: `@${site.handle}`,
   },
   icons: {
@@ -79,10 +69,10 @@ const themeScript = `(function(){try{var k='theme';var s=localStorage.getItem(k)
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: site.name,
-  alternateName: site.nickname,
-  url: siteUrl,
-  jobTitle: site.designation,
+  name: seo.name,
+  alternateName: seo.alternateName,
+  url: seo.url,
+  jobTitle: seo.jobTitle,
   email: `mailto:${site.email}`,
   telephone: site.phone,
   address: {
@@ -90,7 +80,7 @@ const personJsonLd = {
     addressLocality: "Sylhet",
     addressCountry: "BD",
   },
-  sameAs: site.socials.map((social) => social.href),
+  sameAs: [...seo.sameAs],
   knowsAbout: [
     "React",
     "Next.js",

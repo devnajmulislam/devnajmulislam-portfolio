@@ -11,7 +11,7 @@ import {
   Rocket,
 } from "lucide-react";
 import { getProject, projects } from "@/data/projects";
-import { site } from "@/data/site";
+import { seo } from "@/data/seo";
 import { Container } from "@/components/layout/container";
 import { GithubIcon } from "@/components/ui/brand-icons";
 
@@ -31,7 +31,7 @@ export async function generateMetadata({
     description: project.summary,
     alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
-      title: `${project.name} — ${site.name}`,
+      title: `${project.name} — ${seo.name}`,
       description: project.summary,
       images: [{ url: project.screenshot.src }],
     },
