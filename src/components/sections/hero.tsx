@@ -109,7 +109,7 @@ export function Hero() {
                   <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
                 </span>
                 <span className="text-muted font-mono text-xs">
-                  {site.handle}@portfolio: ~/
+                  {site.handle}@image: ~/
                 </span>
               </figcaption>
               <div className="relative">

@@ -43,7 +43,7 @@ export function SkillMagnet() {
   const particles = useRef<Particle[]>([]);
   const pointer = useRef({ x: 0, y: 0, active: false });
   const seated = useRef(false);
-  const [isSeated, setIsSeated] = useState(false);
+  const [, setIsSeated] = useState(false);
 
   const interactive = mounted && !reduced;
 
@@ -193,41 +193,6 @@ export function SkillMagnet() {
 
   return (
     <>
-      <div className="border-border bg-surface-2/40 relative mt-10 flex h-40 items-center justify-center overflow-hidden rounded-2xl border border-dashed px-4 sm:h-44">
-        {interactive ? (
-          <span className="text-muted/70 pointer-events-none font-mono text-[11px] tracking-wider uppercase">
-            {isSeated
-              ? "$ stack docked to the cards"
-              : "$ move your cursor — the stack follows you here"}
-          </span>
-        ) : (
-          <ul className="flex flex-wrap items-center justify-center gap-3">
-            {techStack.map((label) => {
-              const hex = brandHex(label);
-              return (
-                <li
-                  key={label}
-                  title={label}
-                  className="grid h-10 w-10 place-items-center rounded-xl border"
-                  style={{
-                    backgroundColor: brandTint(label, 22) ?? "var(--surface)",
-                    borderColor: hex
-                      ? `color-mix(in srgb, ${hex} 45%, var(--border))`
-                      : "var(--border)",
-                  }}
-                >
-                  <TechIcon
-                    label={label}
-                    className="h-5 w-5"
-                    style={{ color: brandColor(label) }}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
-
       {interactive
         ? createPortal(
             <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-30 print:hidden">
