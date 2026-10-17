@@ -15,7 +15,7 @@ export function Footer() {
       id="footer"
       className="border-border bg-surface-2 mt-auto border-t"
     >
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+      <Container className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div className="max-w-sm">
           <div className="flex items-center gap-2.5">
             <Monogram />

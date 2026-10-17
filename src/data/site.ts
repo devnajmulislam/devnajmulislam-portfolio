@@ -7,7 +7,7 @@ export interface SiteConfig {
   designation: string;
   tagline: string;
   taglines: string[];
-  location: string;
+  // location: string;
   email: string;
   phone: string;
   phoneDisplay: string;
@@ -29,7 +29,7 @@ export const site: SiteConfig = {
     "Content Writer",
     "Movie & Travel Lover",
   ],
-  location: "Sylhet, Bangladesh",
+  // location: "Sylhet, Bangladesh",
   email: "itzmenajmul@gmail.com",
   phone: "+8801778992196",
   phoneDisplay: "+880 1778-992196",

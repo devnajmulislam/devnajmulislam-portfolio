@@ -25,23 +25,6 @@ export function AboutSection() {
 
           <aside className="space-y-6">
             <div className="border-border bg-surface rounded-xl border p-6">
-              <h3 className="font-mono text-accent flex items-center gap-2 text-xs tracking-wider uppercase">
-                <Sparkles className="h-4 w-4" aria-hidden="true" />
-                Quick facts
-              </h3>
-              <dl className="mt-4 space-y-3">
-                {about.quickFacts.map((fact) => (
-                  <div key={fact.label} className="flex flex-col gap-0.5">
-                    <dt className="text-muted font-mono text-[11px] tracking-wide uppercase">
-                      {fact.emoji} {fact.label}
-                    </dt>
-                    <dd className="text-fg text-sm">{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-
-            <div className="border-border bg-surface rounded-xl border p-6">
               <h3 className="text-fg text-sm font-semibold">
                 What I care about
               </h3>

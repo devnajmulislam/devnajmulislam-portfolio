@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight} from "lucide-react";
 import { site } from "@/data/site";
 import { about } from "@/data/about";
 import { Container } from "@/components/layout/container";
@@ -24,7 +24,7 @@ export function Hero() {
         className="bg-accent-2/10 animate-aurora pointer-events-none absolute top-1/3 -right-10 h-80 w-80 rounded-full blur-[120px]"
       />
 
-      <Container className="relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
+      <Container className="relative grid items-stretch gap-12 py-12 sm:py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-16">
         <div>
           <Reveal>
             <p className="text-muted inline-flex items-center gap-2 font-mono text-xs">
@@ -52,13 +52,6 @@ export function Hero() {
                 words={site.taglines}
                 srLabel={site.designation}
               />
-            </p>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <p className="text-muted mt-2 inline-flex items-center gap-1.5 text-sm">
-              <MapPin className="h-4 w-4" aria-hidden="true" />
-              {site.location}
             </p>
           </Reveal>
 
@@ -90,7 +83,7 @@ export function Hero() {
               {about.quickFacts.slice(0, 4).map((fact) => (
                 <div key={fact.label}>
                   <dt className="text-muted font-mono text-[11px] tracking-wide uppercase">
-                    {fact.emoji} {fact.label}
+                    {fact.label}
                   </dt>
                   <dd className="text-fg mt-1 text-sm">{fact.value}</dd>
                 </div>
@@ -99,9 +92,10 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={220} className="mx-auto w-full max-w-sm lg:max-w-none">
-          <div className="ring-border bg-border-strong animate-float relative overflow-hidden rounded-xl shadow-lg">
-            <figure className="bg-surface relative z-10 m-[3px] overflow-hidden rounded-[9px]">
+        {/* Added h-full to Reveal and wrapper components to explicitly match grid row height */}
+        <Reveal delay={220} className="mx-auto flex h-full w-full max-w-sm flex-col lg:max-w-none">
+          <div className="ring-border bg-border-strong animate-float relative flex h-full flex-col overflow-hidden rounded-xl shadow-lg">
+            <figure className="bg-surface relative z-10 m-[3px] flex h-full flex-col overflow-hidden rounded-[9px]">
               <figcaption className="border-border bg-surface-2 flex items-center gap-2 border-b px-4 py-2.5">
                 <span className="flex gap-1.5" aria-hidden="true">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
@@ -112,7 +106,8 @@ export function Hero() {
                   {site.handle}@image: ~/
                 </span>
               </figcaption>
-              <div className="relative">
+
+              <div className="relative flex-1">
                 <Image
                   src="/images/profile-img.png"
                   alt={`Portrait of ${site.name}`}
@@ -120,7 +115,7 @@ export function Hero() {
                   height={1280}
                   priority
                   sizes="(max-width: 1024px) 384px, 420px"
-                  className="aspect-4/5 w-full object-cover contrast-[1.06] saturate-[0.95]"
+                  className="absolute inset-0 h-full w-full object-cover contrast-[1.06] saturate-[0.95]"
                 />
                 <span
                   aria-hidden="true"

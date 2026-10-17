@@ -1,8 +1,8 @@
 export const seo = {
-  name: "Dev Najmul Islam",
+  name: "Najmul Islam",
   alternateName: "devnajmulislam",
   jobTitle: "Full Stack Web Developer",
-  title: "Dev Najmul Islam | Full Stack Web Developer Portfolio",
+  title: "Najmul Islam | Full Stack Web Developer",
   description:
     "Portfolio of Dev Najmul Islam, a Full Stack Web Developer specializing in React, Node.js, and modern web applications.",
   keywords: [

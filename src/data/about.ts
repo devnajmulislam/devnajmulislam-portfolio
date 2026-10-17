@@ -1,5 +1,4 @@
 export interface QuickFact {
-  emoji: string;
   label: string;
   value: string;
 }
@@ -21,11 +20,11 @@ export const about: AboutContent = {
     "Outside of code, I love watching movies and travelling whenever I can. New places and new problems appeal to me for the same reason - they make me look at things from a different angle.",
   ],
   quickFacts: [
-    { emoji: "📍", label: "Based in", value: "Sylhet, Bangladesh" },
-    { emoji: "📚", label: "Learning", value: "MERN stack · Programming Hero" },
-    { emoji: "💼", label: "Day job", value: "Content Writer · Russkin Bright" },
-    { emoji: "🎯", label: "Focus", value: "React, Next.js, TypeScript, Node.js" },
-    { emoji: "🎬", label: "Hobbies", value: "Movies & travelling" },
+    { label: "Based in", value: "Sylhet, Bangladesh" },
+    { label: "Learning", value: "MERN stack · Programming Hero" },
+    { label: "Day job", value: "Content Writer · Russkin Bright" },
+    { label: "Focus", value: "React, Next.js, TypeScript, Node.js" },
+    { label: "Hobbies", value: "Movies & travelling" },
   ],
   interests: [
     "Building practical, useful applications",
