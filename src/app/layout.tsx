@@ -105,6 +105,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <head>
+      <meta name="google-site-verification" content="ePeZt0v3gHudV6JUkAmJdAC-GL4-Sah3IHFbZ9XjFK0" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
