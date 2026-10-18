@@ -1,4 +1,4 @@
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import { about } from "@/data/about";
 import { Container } from "@/components/layout/container";
 import { Section, SectionHeading } from "@/components/ui/section";

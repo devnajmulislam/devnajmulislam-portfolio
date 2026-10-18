@@ -50,7 +50,7 @@ export default function Image() {
             {site.designation}
           </div>
           <div style={{ color: "#93a89c", fontSize: 28, marginTop: 20 }}>
-            {`${site.location} · MERN learner · Content Writer`}
+            {`${site?.location} · Content Writer`}
           </div>
         </div>
 

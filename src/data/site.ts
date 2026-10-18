@@ -7,7 +7,7 @@ export interface SiteConfig {
   designation: string;
   tagline: string;
   taglines: string[];
-  // location: string;
+  location: string;
   email: string;
   phone: string;
   phoneDisplay: string;
@@ -29,11 +29,11 @@ export const site: SiteConfig = {
     "Content Writer",
     "Movie & Travel Lover",
   ],
-  // location: "Sylhet, Bangladesh",
+  location: "Sylhet, Bangladesh",
   email: "itzmenajmul@gmail.com",
   phone: "+8801778992196",
   phoneDisplay: "+880 1778-992196",
-  whatsapp: null,
+  whatsapp: "+8801778992196",
   resumeUrl: "/resume/najmul-islam-resume.pdf",
   description:
     "Najmul Islam (Nahid) is an aspiring full-stack developer learning the MERN stack through Programming Hero, building practical web apps and writing clear technical content.",

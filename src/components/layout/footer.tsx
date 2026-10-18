@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { navItems } from "@/data/nav";
 import { site } from "@/data/site";
+import { gmailComposeUrl, mapsUrl, whatsappChatUrl } from "@/data/contact";
 import { Container } from "@/components/layout/container";
 import { Monogram } from "@/components/ui/brand";
 import { MusicButton } from "@/components/ui/music-button";
@@ -35,22 +36,36 @@ export function Footer() {
           <SocialLinks className="mt-5" />
         </div>
 
-        <nav aria-label="Footer">
-          <h2 className="font-mono text-accent text-xs tracking-wider uppercase">
+        <nav aria-label="Explore" className="flex flex-col items-start">
+          <h2 className="font-mono text-accent text-center text-xs tracking-wider uppercase">
             Explore
           </h2>
-          <ul className="mt-4 space-y-2.5">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-muted hover:text-fg focus-visible:outline-focus text-sm transition-colors"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-4 flex gap-4">
+            <ul className="space-y-2.5">
+              {navItems.slice(3).map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-muted hover:text-fg focus-visible:outline-focus text-sm transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="space-y-2.5">
+              {navItems.slice(0, 3).map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-muted hover:text-fg focus-visible:outline-focus text-sm transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
 
         <div>
@@ -60,7 +75,9 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li>
               <a
-                href={`mailto:${site.email}`}
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted hover:text-fg focus-visible:outline-focus inline-flex items-center gap-2 transition-colors"
               >
                 <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -69,16 +86,25 @@ export function Footer() {
             </li>
             <li>
               <a
-                href={`tel:${site.phone}`}
+                href={whatsappChatUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted hover:text-fg focus-visible:outline-focus inline-flex items-center gap-2 transition-colors"
               >
-                <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+                <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {site.phoneDisplay}
               </a>
             </li>
-            <li className="text-muted inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-              {site.location}
+            <li>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-fg focus-visible:outline-focus inline-flex items-center gap-2 transition-colors"
+              >
+                <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+                {site.location}
+              </a>
             </li>
           </ul>
         </div>
